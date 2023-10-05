@@ -10,10 +10,26 @@ public class World : MonoBehaviour
     [SerializeField] private string m_fenceCollectionName = "Fence";
     [SerializeField] private RectInt m_bounds;
     [SerializeField] private FencePole m_fencePrefab;
+    [SerializeField] private ColorVariant[] m_colorVariants;
+    private float m_colorVariantChanceSum;
 
+    [Serializable]
+    public struct ColorVariant
+    {
+        [ColorUsage(false,true)]
+        [SerializeField] 
+        private Color m_color;
+        
+        [SerializeField] 
+        private float m_chance;
+        
+        public Color Color => m_color;
+        public float Chance => m_chance;
+    }
+    
     private CellData[] m_cells;
     private bool m_mudDirty;
-    private HashSet<int> m_dirtyCellObjects = new();
+    private readonly HashSet<int> m_dirtyCellObjects = new();
     
     public event Action MudUpdated;
 
@@ -22,18 +38,54 @@ public class World : MonoBehaviour
     public Plane WorldPlane => new Plane(transform.up, transform.position);
     public FencePole FencePrefab => m_fencePrefab;
     public RectInt Bounds => m_bounds;
+    
+    private void SetAllCellsDirty()
+    {
+        for( int i = 0; i < m_cells.Length; ++i )
+            m_dirtyCellObjects.Add(i);
+    }
 
     protected void Awake()
     {
+        m_colorVariantChanceSum = 0f;
+        foreach(var variant in m_colorVariants)
+        {
+            m_colorVariantChanceSum += variant.Chance;
+        }
+        
         m_cells = new CellData[m_bounds.width * m_bounds.height];
+
+        m_reduceFenceConnections.Changed += (_) => SetAllCellsDirty();
     }
 
-    public int GetCellIndexNoCheck(Vector2Int gridPos)
+    public Color PickRandomColor()
+    {
+        float rand = UnityEngine.Random.Range(0f, m_colorVariantChanceSum);
+        float chanceSum = 0;
+        foreach (var variant in m_colorVariants)
+        {
+            chanceSum += variant.Chance;
+            if(rand < chanceSum)
+                return variant.Color;
+        }
+        return m_colorVariants[^1].Color;
+    }
+
+    /// <summary>
+    /// Converts grid position to cell array index.
+    /// Doesn't check for world bounds.
+    /// </summary>
+    private int GetCellIndexNoCheck(Vector2Int gridPos)
     {
         gridPos -= m_bounds.min;
         return gridPos.x + gridPos.y * m_bounds.width;
     }
 
+    
+    /// <summary>
+    /// Attempts to convert grid position to cell array index.
+    /// </summary>
+    /// <returns>True if gridPos is within world bounds.</returns>
     public bool TryGetCellIndex(Vector2Int gridPos, out int index)
     {
         if(!m_bounds.Contains(gridPos))
@@ -46,15 +98,30 @@ public class World : MonoBehaviour
         return true;
     }
 
+    /// <summary>
+    /// Converts cell array index grid position.
+    /// </summary>
     public Vector2Int GetGridPos(int cellIndex)
     {
         return new Vector2Int(cellIndex % m_bounds.width, cellIndex / m_bounds.width) + m_bounds.min;
     }
     
-    public Vector3 GridToWorld(Vector2Int gridPos) => gridPos.X0Y() + new Vector3(0.5f,0f,0.5f);
+    /// <summary>
+    /// Converts grid position to world position.
+    /// </summary>
+    /// <param name="gridPos"></param>
+    /// <returns></returns>
+    public Vector3 GridToWorld(Vector2 gridPos) => gridPos.X0Y() + new Vector3(0.5f,0f,0.5f);
 
+    /// <summary>
+    /// Converts world position to grid position.
+    /// </summary>
     public Vector2 WorldToGrid(Vector3 worldPos) => worldPos.XZ() - new Vector2(0.5f,0.5f);
     
+    /// <summary>
+    /// Ensures that the cell contains an instance of the prefab provided.
+    /// If prefab is null, the cell is cleared.
+    /// </summary>
     public void SetGridObject(Vector2Int gridPos, GridObject prefab)
     {
         if(!TryGetCellIndex(gridPos, out int index))
@@ -72,21 +139,39 @@ public class World : MonoBehaviour
         }
         
         if(prefab != null)
+        {
             cell.GridObject = Instantiate(prefab, GridToWorld(gridPos), Quaternion.identity, transform);
+            cell.GridObject.Initialize(this);
+        }
         else
+        {
             cell.GridObject = null;
+        }
         
         m_mudDirty = true;
         
-        for(int y = gridPos.y - 1; y <= gridPos.y + 1; ++y)
+        SetNeighborhoodDirty(gridPos);
+    }
+    
+    /// <summary>
+    /// Sets all cells around gridPos (including) as dirty
+    /// </summary>
+    /// <param name="gridPos"></param>
+    private void SetNeighborhoodDirty(Vector2Int gridPos)
+    {
+        for( int y = gridPos.y - 1; y <= gridPos.y + 1; ++y )
         {
-            for(int x = gridPos.x - 1; x <= gridPos.x + 1; ++x)
+            for( int x = gridPos.x - 1; x <= gridPos.x + 1; ++x )
             {
-                m_dirtyCellObjects.Add(GetCellIndexNoCheck(new Vector2Int(x, y)));
+                if(TryGetCellIndex(new Vector2Int(x, y), out int index))
+                    m_dirtyCellObjects.Add(index);
             }
         }
     }
-    
+
+    /// <summary>
+    /// Clears the world and loads the content of the database.
+    /// </summary>
     [Preserve]
     public async void LoadFromDatabase()
     {
@@ -98,8 +183,14 @@ public class World : MonoBehaviour
             CellDTO cellDto = documentSnapshot.ConvertTo<CellDTO>();
             SetGridObject(cellDto.Position, m_fencePrefab);
         }
+
+        m_dbUpdateTime.Value = DateTime.Now;
     }
 
+    /// <summary>
+    /// Saves the world to the database.
+    /// </summary>
+    [Preserve]
     public async void SaveToDatabase()
     {
         var firestore = FirebaseFirestore.DefaultInstance;
@@ -128,6 +219,9 @@ public class World : MonoBehaviour
         await batch.CommitAsync();
     }
     
+    /// <summary>
+    /// Clears all world cells.
+    /// </summary>
     public void Clear()
     {
         for( int i = 0; i < m_cells.Length; ++i )
@@ -152,17 +246,51 @@ public class World : MonoBehaviour
             m_mudDirty = false;
         }
 
-        foreach (int dirtyIndex in m_dirtyCellObjects)
+        if(m_dirtyCellObjects.Count > 0)
         {
-            var obj = m_cells[dirtyIndex].GridObject;
-            if(obj == null)
-                continue;
-            obj.OnNeighborsChanged(this, dirtyIndex);
+            // Dirty cells get OnNeighborsChanged call
+            foreach (int dirtyIndex in m_dirtyCellObjects)
+            {
+                var obj = m_cells[dirtyIndex].GridObject;
+                if(obj == null)
+                    continue;
+                obj.OnNeighborsChanged(this, dirtyIndex);
+            }
+            m_dirtyCellObjects.Clear();
+            
+            // calc some stats
+            int count = 0;
+            float length = 0;
+            for( int i = 0; i < m_cells.Length; ++i )
+            {
+                var cell = GetCellData(i);
+                if(cell.GridObject is FencePole fencePole)
+                {
+                    count++;
+                    length += fencePole.FenceLength;
+                }
+            }
+            m_fenceCount.Value = count;
+            m_fenceLength.Value = length;
         }
-        m_dirtyCellObjects.Clear();
     }
 
     private static readonly CustomSampler s_updateMudSampler = CustomSampler.Create(nameof(UpdateMud));
+    
+    private readonly Observable<DateTime> m_dbUpdateTime = new();
+    private readonly Observable<int> m_fenceCount = new();
+    private readonly Observable<float> m_fenceLength = new();
+    private readonly Observable<bool> m_reduceFenceConnections = new(true);
+
+    
+    public Observable<DateTime>.View DatabaseUpdateTime => m_dbUpdateTime.GetView();
+    public Observable<int>.View FenceCount => m_fenceCount.GetView();
+    public Observable<float>.View FenceLength => m_fenceLength.GetView();
+    public Observable<bool> ReduceFenceConnections => m_reduceFenceConnections;
+
+    /// <summary>
+    /// FloodFills the world from the edges, in order to find cells that are fully enclosed by fences.
+    /// </summary>
     private void UpdateMud()
     {
         s_updateMudSampler.Begin();
@@ -209,6 +337,9 @@ public class World : MonoBehaviour
         MudUpdated?.Invoke();
     }
 
+    /// <summary>
+    /// Yields all cell positions that are on the edge of the world.
+    /// </summary>
     IEnumerable<Vector2Int> EnumerateWorldEdgeCells()
     {
         for( int x = m_bounds.xMin; x < m_bounds.xMax; ++x )

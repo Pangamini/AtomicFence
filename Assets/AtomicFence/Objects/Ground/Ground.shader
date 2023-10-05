@@ -17,7 +17,7 @@ Shader "Custom/Ground"
         
         _MudMap ("Mud Map", 2D) = "black" {}
         _MudNoise("Mud Noise", 2D) = "white" {}
-        _MudPower("Mud Power", Range(0.1, 10)) = 1
+        [PowerSlider(2)]_MudPower("Mud Power", Range(1, 50)) = 1
     }
     SubShader
     {
@@ -108,7 +108,7 @@ Shader "Custom/Ground"
         
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
-            const float mudNoise = pow(tex2D(_MudNoise, IN.mudNoiseUv)*8, 8);
+            const float mudNoise = pow(tex2D(_MudNoise, IN.mudNoiseUv)*5,4);
             const float mudBase = pow(1-pow(BicubicSample(_MudMap, _MudMap_TexelSize, IN.mudMaskUv), _MudPower), 2.2);
             const float mudMask = saturate(saturate(1-mudBase-mudNoise*(mudBase))*2);
             
