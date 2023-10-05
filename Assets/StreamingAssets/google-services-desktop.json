@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "984179357000",
+    "project_id": "atomicfence-cf77b",
+    "storage_bucket": "atomicfence-cf77b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:984179357000:android:6c6147e2515be93f9def7d",
+        "android_client_info": {
+          "package_name": "com.bolek.atomicfence"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKe5Ad9M9qERmqhjcjfw7iZx5kAcMkOHY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

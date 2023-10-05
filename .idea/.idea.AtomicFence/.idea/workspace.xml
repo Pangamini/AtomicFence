@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="67ebbba4-fefe-42ff-8aa8-5fe2c36992a3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/AtomicFence.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/AtomicFence/CellDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/AtomicFence/CellDTO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/AtomicFence/GameRoot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/AtomicFence/GameRoot.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/AtomicFence/Scenes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/AtomicFence/Scenes/SampleScene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/AtomicFence/Scenes/SampleScene.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_analytics.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_analytics.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_analytics_dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_analytics_dark.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_auth.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_auth.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_auth_dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_auth_dark.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_cloud_messaging.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_cloud_messaging.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_cloud_messaging_dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_cloud_messaging_dark.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_config.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_config.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_config_dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_config_dark.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_crashlytics.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_crashlytics.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_crashlytics_dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_crashlytics_dark.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_database.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_database.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_database_dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_database_dark.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_dynamic_links.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_dynamic_links.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_dynamic_links_dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_dynamic_links_dark.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_functions.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_functions.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_functions_dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_functions_dark.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_invites.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_invites.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_invites_dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_invites_dark.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_storage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_storage.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_storage_dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/fb_storage_dark.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/firebase_lockup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/firebase_lockup.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/firebase_lockup_dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor Default Resources/Firebase/firebase_lockup_dark.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/1.2.176.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/1.2.176/Google.IOSResolver.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/1.2.176/Google.IOSResolver.dll.mdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/1.2.176/Google.IOSResolver.dll.mdb.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/1.2.176/Google.IOSResolver.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/1.2.176/Google.JarResolver.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/1.2.176/Google.JarResolver.dll.mdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/1.2.176/Google.JarResolver.dll.mdb.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/1.2.176/Google.JarResolver.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/1.2.176/Google.PackageManagerResolver.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/1.2.176/Google.PackageManagerResolver.dll.mdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/1.2.176/Google.PackageManagerResolver.dll.mdb.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/1.2.176/Google.PackageManagerResolver.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/1.2.176/Google.VersionHandlerImpl.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/1.2.176/Google.VersionHandlerImpl.dll.mdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/1.2.176/Google.VersionHandlerImpl.dll.mdb.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/1.2.176/Google.VersionHandlerImpl.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/CHANGELOG.md.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/Google.VersionHandler.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/Google.VersionHandler.dll.mdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/Google.VersionHandler.dll.mdb.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/Google.VersionHandler.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/LICENSE.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/README.md.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/external-dependency-manager_version-1.2.176_manifest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ExternalDependencyManager/Editor/external-dependency-manager_version-1.2.176_manifest.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Editor/AppDependencies.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Editor/AppDependencies.xml.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Editor/Firebase.Editor.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Editor/Firebase.Editor.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Editor/Firebase.Editor.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Editor/Firebase.Editor.pdb.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Editor/FirebaseFirestore_version-11.1.0_manifest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Editor/FirebaseFirestore_version-11.1.0_manifest.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Editor/FirestoreDependencies.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Editor/FirestoreDependencies.xml.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Editor/generate_xml_from_google_services_json.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Editor/generate_xml_from_google_services_json.exe.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Editor/generate_xml_from_google_services_json.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Editor/generate_xml_from_google_services_json.py.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Editor/network_request.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Editor/network_request.exe.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Editor/network_request.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Editor/network_request.py.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/Firebase.App.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/Firebase.App.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/Firebase.App.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/Firebase.App.pdb.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/Firebase.Firestore.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/Firebase.Firestore.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/Firebase.Firestore.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/Firebase.Firestore.pdb.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/Firebase.Platform.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/Firebase.Platform.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/Firebase.Platform.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/Firebase.Platform.pdb.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/Firebase.TaskExtension.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/Firebase.TaskExtension.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/Firebase.TaskExtension.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/Firebase.TaskExtension.pdb.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/Google.MiniJson.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/Google.MiniJson.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-11_1_0.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-11_1_0.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-6_13_0.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-6_13_0.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFirestore.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFirestore.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/m2repository.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/m2repository/com.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/m2repository/com/google.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/m2repository/com/google/firebase.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/m2repository/com/google/firebase/firebase-app-unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/m2repository/com/google/firebase/firebase-app-unity/11.1.0.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/m2repository/com/google/firebase/firebase-app-unity/11.1.0/firebase-app-unity-11.1.0.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/m2repository/com/google/firebase/firebase-app-unity/11.1.0/firebase-app-unity-11.1.0.pom.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/m2repository/com/google/firebase/firebase-app-unity/11.1.0/firebase-app-unity-11.1.0.srcaar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/m2repository/com/google/firebase/firebase-app-unity/11.1.0/firebase-app-unity-11.1.0.srcaar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/m2repository/com/google/firebase/firebase-app-unity/maven-metadata.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/m2repository/com/google/firebase/firebase-app-unity/maven-metadata.xml.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/m2repository/com/google/firebase/firebase-firestore-unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/m2repository/com/google/firebase/firebase-firestore-unity/11.1.0.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/m2repository/com/google/firebase/firebase-firestore-unity/11.1.0/firebase-firestore-unity-11.1.0.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/m2repository/com/google/firebase/firebase-firestore-unity/11.1.0/firebase-firestore-unity-11.1.0.pom.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/m2repository/com/google/firebase/firebase-firestore-unity/11.1.0/firebase-firestore-unity-11.1.0.srcaar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/m2repository/com/google/firebase/firebase-firestore-unity/11.1.0/firebase-firestore-unity-11.1.0.srcaar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/m2repository/com/google/firebase/firebase-firestore-unity/maven-metadata.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/m2repository/com/google/firebase/firebase-firestore-unity/maven-metadata.xml.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GoogleService-Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GoogleService-Info.plist.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/FirebaseApp.androidlib.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/FirebaseApp.androidlib/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/FirebaseApp.androidlib/project.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/FirebaseApp.androidlib/res/values/google-services.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.annotation.annotation-1.5.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.annotation.annotation-1.5.0.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.arch.core.core-common-2.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.arch.core.core-common-2.0.0.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.arch.core.core-runtime-2.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.arch.core.core-runtime-2.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.asynclayoutinflater.asynclayoutinflater-1.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.asynclayoutinflater.asynclayoutinflater-1.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.collection.collection-1.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.collection.collection-1.0.0.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.concurrent.concurrent-futures-1.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.concurrent.concurrent-futures-1.1.0.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.coordinatorlayout.coordinatorlayout-1.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.coordinatorlayout.coordinatorlayout-1.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.core.core-1.2.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.core.core-1.2.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.cursoradapter.cursoradapter-1.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.cursoradapter.cursoradapter-1.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.customview.customview-1.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.customview.customview-1.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.documentfile.documentfile-1.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.documentfile.documentfile-1.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.drawerlayout.drawerlayout-1.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.drawerlayout.drawerlayout-1.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.fragment.fragment-1.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.fragment.fragment-1.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.interpolator.interpolator-1.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.interpolator.interpolator-1.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.legacy.legacy-support-core-ui-1.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.legacy.legacy-support-core-ui-1.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.legacy.legacy-support-core-utils-1.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.legacy.legacy-support-core-utils-1.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.lifecycle.lifecycle-common-2.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.lifecycle.lifecycle-common-2.0.0.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.lifecycle.lifecycle-livedata-2.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.lifecycle.lifecycle-livedata-2.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.lifecycle.lifecycle-livedata-core-2.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.lifecycle.lifecycle-livedata-core-2.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.lifecycle.lifecycle-runtime-2.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.lifecycle.lifecycle-runtime-2.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.lifecycle.lifecycle-viewmodel-2.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.lifecycle.lifecycle-viewmodel-2.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.loader.loader-1.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.loader.loader-1.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.localbroadcastmanager.localbroadcastmanager-1.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.localbroadcastmanager.localbroadcastmanager-1.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.print.print-1.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.print.print-1.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.slidingpanelayout.slidingpanelayout-1.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.slidingpanelayout.slidingpanelayout-1.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.swiperefreshlayout.swiperefreshlayout-1.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.swiperefreshlayout.swiperefreshlayout-1.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.versionedparcelable.versionedparcelable-1.1.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.versionedparcelable.versionedparcelable-1.1.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.viewpager.viewpager-1.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.viewpager.viewpager-1.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.annotations-4.1.1.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.annotations-4.1.1.4.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-ads-identifier-18.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-ads-identifier-18.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-base-18.2.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-base-18.2.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-basement-18.1.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-basement-18.1.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-measurement-21.3.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-measurement-21.3.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-measurement-api-21.3.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-measurement-api-21.3.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-measurement-base-21.3.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-measurement-base-21.3.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-measurement-impl-21.3.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-measurement-impl-21.3.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-measurement-sdk-21.3.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-measurement-sdk-21.3.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-measurement-sdk-api-21.3.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-measurement-sdk-api-21.3.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-stats-17.0.2.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-stats-17.0.2.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-tasks-18.0.2.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-tasks-18.0.2.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.code.findbugs.jsr305-3.0.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.code.findbugs.jsr305-3.0.2.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.code.gson.gson-2.9.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.code.gson.gson-2.9.0.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.errorprone.error_prone_annotations-2.14.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.errorprone.error_prone_annotations-2.14.0.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-analytics-21.3.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-analytics-21.3.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-annotations-16.2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-annotations-16.2.0.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-app-unity-11.1.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-app-unity-11.1.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-appcheck-interop-17.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-appcheck-interop-17.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-auth-interop-19.0.2.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-auth-interop-19.0.2.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-common-20.3.2.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-common-20.3.2.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-components-17.1.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-components-17.1.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-database-collection-18.0.1.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-database-collection-18.0.1.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-firestore-24.6.1.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-firestore-24.6.1.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-firestore-unity-11.1.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-firestore-unity-11.1.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-installations-17.0.1.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-installations-17.0.1.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-installations-interop-17.0.1.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-installations-interop-17.0.1.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-measurement-connector-19.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.firebase-measurement-connector-19.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.protolite-well-known-types-18.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.firebase.protolite-well-known-types-18.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.guava.failureaccess-1.0.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.guava.failureaccess-1.0.1.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.guava.guava-31.1-android.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.guava.guava-31.1-android.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.guava.listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.guava.listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.j2objc.j2objc-annotations-1.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.j2objc.j2objc-annotations-1.3.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.protobuf.protobuf-javalite-3.21.7.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.protobuf.protobuf-javalite-3.21.7.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.squareup.okio.okio-1.17.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.squareup.okio.okio-1.17.5.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/io.grpc.grpc-android-1.52.1.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/io.grpc.grpc-android-1.52.1.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/io.grpc.grpc-api-1.52.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/io.grpc.grpc-api-1.52.1.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/io.grpc.grpc-context-1.52.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/io.grpc.grpc-context-1.52.1.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/io.grpc.grpc-core-1.52.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/io.grpc.grpc-core-1.52.1.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/io.grpc.grpc-okhttp-1.52.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/io.grpc.grpc-okhttp-1.52.1.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/io.grpc.grpc-protobuf-lite-1.52.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/io.grpc.grpc-protobuf-lite-1.52.1.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/io.grpc.grpc-stub-1.52.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/io.grpc.grpc-stub-1.52.1.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/io.perfmark.perfmark-api-0.25.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/io.perfmark.perfmark-api-0.25.0.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/javax.inject.javax.inject-1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/javax.inject.javax.inject-1.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/org.checkerframework.checker-qual-3.12.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/org.checkerframework.checker-qual-3.12.0.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/org.codehaus.mojo.animal-sniffer-annotations-1.21.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/org.codehaus.mojo.animal-sniffer-annotations-1.21.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/org.jetbrains.annotations-13.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/org.jetbrains.annotations-13.0.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/org.jetbrains.kotlin.kotlin-stdlib-1.7.10.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/org.jetbrains.kotlin.kotlin-stdlib-1.7.10.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/org.jetbrains.kotlin.kotlin-stdlib-common-1.7.10.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/org.jetbrains.kotlin.kotlin-stdlib-common-1.7.10.jar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/google-services-desktop.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/google-services-desktop.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Documentation.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Sprite Assets.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/google-services.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/google-services.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/AndroidResolverDependencies.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/ClusterInputManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/MemorySettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/PresetManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/VersionControlSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/XRSettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1c43e07b707e4af7b395468e3b915ee712600/fb/e3a0f632/DataSnapshot.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6aa1344d42e44dcfb7f44adfeb17bcba15e00/ab/5e894ebb/FirebaseApp.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/787acc3c9a4c471ba7d971300105af2446ac00/02/02439fe0/ReaderWriterLock.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/787acc3c9a4c471ba7d971300105af2446ac00/5a/490184b2/AsyncVoidMethodBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/787acc3c9a4c471ba7d971300105af2446ac00/bf/a3c2fa3b/Task.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/959e0c03ace844869e74d79e474eb7352be00/58/593cfe4a/CollectionReferenceProxy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/959e0c03ace844869e74d79e474eb7352be00/78/a2994daa/FirebaseFirestore.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/959e0c03ace844869e74d79e474eb7352be00/aa/337604c0/FirestoreProxy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Downloads/FirestoreManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AtomicFence/CellDTO.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2WKu5p0T7U4MOFZMP4f6iMeUdNV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\boles\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\boles\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\boles\\AppData\\Local\\Symbols\\src&quot;
+    ]
+  }
+}</component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="E:\Program Files\Unity\Editor\2022.3.10f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath E:\Projects\AtomicFence -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="E:\Projects\AtomicFence" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="E:\Program Files\Unity\Editor\2022.3.10f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath E:\Projects\AtomicFence -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="E:\Projects\AtomicFence" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="true" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="67ebbba4-fefe-42ff-8aa8-5fe2c36992a3" name="Changes" comment="" />
+      <created>1696493412160</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1696493412160</updated>
+      <workItem from="1696493413727" duration="7888000" />
+      <workItem from="1696501850745" duration="319000" />
+      <workItem from="1696503396224" duration="97000" />
+      <workItem from="1696503900065" duration="3410000" />
+      <workItem from="1696507803368" duration="3633000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
