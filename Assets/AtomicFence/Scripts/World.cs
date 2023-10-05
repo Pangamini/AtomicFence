@@ -14,11 +14,13 @@ public class World : MonoBehaviour
     
     private CellData[] m_cells;
     private bool m_mudDirty;
+    public event Action MudUpdated;
 
     public CellData GetCellData(int index) => m_cells[index];
     
     public Plane WorldPlane => new Plane(transform.up, transform.position);
     public FencePole FencePrefab => m_fencePrefab;
+    public RectInt Bounds => m_bounds;
 
     protected void Awake()
     {
@@ -83,7 +85,6 @@ public class World : MonoBehaviour
         }
         m_mudDirty = true;
     }
-    
     
     [Preserve]
     public async void LoadFromDatabase()
@@ -194,6 +195,8 @@ public class World : MonoBehaviour
             TryEnqueue(new Vector2Int(cellIndex.x, cellIndex.y-1));
         }
         s_updateMudSampler.End();
+
+        MudUpdated?.Invoke();
     }
 
     IEnumerable<Vector2Int> EnumerateWorldEdgeCells()
