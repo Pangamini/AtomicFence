@@ -1,19 +1,20 @@
 using System;
 using System.Collections.Generic;
-using System.Text;
 using Firebase.Firestore;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Profiling;
 using UnityEngine.Scripting;
+
 public class World : MonoBehaviour
 {
     [SerializeField] private string m_fenceCollectionName = "Fence";
     [SerializeField] private RectInt m_bounds;
     [SerializeField] private FencePole m_fencePrefab;
-    
+
     private CellData[] m_cells;
     private bool m_mudDirty;
+    private HashSet<int> m_dirtyCellObjects = new();
+    
     public event Action MudUpdated;
 
     public CellData GetCellData(int index) => m_cells[index];
@@ -45,7 +46,7 @@ public class World : MonoBehaviour
         return true;
     }
 
-    private Vector2Int GetGridPos(int cellIndex)
+    public Vector2Int GetGridPos(int cellIndex)
     {
         return new Vector2Int(cellIndex % m_bounds.width, cellIndex / m_bounds.width) + m_bounds.min;
     }
@@ -70,20 +71,20 @@ public class World : MonoBehaviour
             Destroy(cell.GridObject.gameObject);
         }
         
-        cell.GridObject = prefab == null? null : Instantiate(prefab, GridToWorld(gridPos), Quaternion.identity, transform);
-        m_mudDirty = true;
-    }
-
-    private void ClearGridObject(int index)
-    {
-        ref CellData cell = ref m_cells[index];
-        if(cell.GridObject)
-        {
-            Destroy(cell.GridObject.gameObject);
+        if(prefab != null)
+            cell.GridObject = Instantiate(prefab, GridToWorld(gridPos), Quaternion.identity, transform);
+        else
             cell.GridObject = null;
-            cell.GridObjectPrefab = null;
-        }
+        
         m_mudDirty = true;
+        
+        for(int y = gridPos.y - 1; y <= gridPos.y + 1; ++y)
+        {
+            for(int x = gridPos.x - 1; x <= gridPos.x + 1; ++x)
+            {
+                m_dirtyCellObjects.Add(GetCellIndexNoCheck(new Vector2Int(x, y)));
+            }
+        }
     }
     
     [Preserve]
@@ -131,7 +132,7 @@ public class World : MonoBehaviour
     {
         for( int i = 0; i < m_cells.Length; ++i )
         {
-            ClearGridObject(i);
+            SetGridObject(GetGridPos(i), null);
         }
     }
     
@@ -150,6 +151,15 @@ public class World : MonoBehaviour
             UpdateMud();
             m_mudDirty = false;
         }
+
+        foreach (int dirtyIndex in m_dirtyCellObjects)
+        {
+            var obj = m_cells[dirtyIndex].GridObject;
+            if(obj == null)
+                continue;
+            obj.OnNeighborsChanged(this, dirtyIndex);
+        }
+        m_dirtyCellObjects.Clear();
     }
 
     private static readonly CustomSampler s_updateMudSampler = CustomSampler.Create(nameof(UpdateMud));

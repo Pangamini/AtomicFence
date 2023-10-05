@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b91949f6967fd3f418eab076be3a2420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_connectorPrefab: {fileID: 3288697295711569528, guid: 284d2b24f7fdc0a4a95be5b441ff0af3, type: 3}
+  m_diagonalConnectorPrefab: {fileID: 2835789712899824907, guid: 2701cb56bb6f51c43a821bbf06a37b5b, type: 3}
 --- !u!1 &8422166785312417150
 GameObject:
   m_ObjectHideFlags: 0
