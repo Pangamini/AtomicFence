@@ -1,15 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
-
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Renderer))]
 public class MudRenderer : MonoBehaviour
 {
-    [SerializeField] private World m_world;
+    [SerializeField] private Chunk m_chunk;
     [SerializeField] private string m_shaderTextureField = "_MainTex";
     [SerializeField] private int m_mudPowerId = Shader.PropertyToID("_MudPower");
     private Texture2D m_texture;
@@ -47,27 +43,27 @@ public class MudRenderer : MonoBehaviour
 
     private void OnEnable()
     {
-        m_texture = new Texture2D(m_world.Bounds.width, m_world.Bounds.height, GraphicsFormat.R8_UNorm, 0, TextureCreationFlags.DontInitializePixels);
+        m_texture = new Texture2D(m_chunk.Bounds.width, m_chunk.Bounds.height, GraphicsFormat.R8_UNorm, 0, TextureCreationFlags.DontInitializePixels);
         m_block.Clear();
         m_block.SetTexture(m_shaderTextureField, m_texture);
         m_renderer.SetPropertyBlock(m_block);
-        m_world.MudUpdated += OnMudUpdated;
+        m_chunk.MudUpdated += OnMudUpdated;
     }
     
     private void OnDisable()
     {
+        m_chunk.MudUpdated -= OnMudUpdated;
         m_block.Clear();
         m_renderer.SetPropertyBlock(m_block);
-        m_world.MudUpdated -= OnMudUpdated;
         Destroy(m_texture);
     }
     
     private void OnMudUpdated()
     {
-        var colors = new NativeArray<byte>(m_world.Bounds.width * m_world.Bounds.height, Allocator.Temp, NativeArrayOptions.UninitializedMemory);
+        var colors = new NativeArray<byte>(m_chunk.Bounds.width * m_chunk.Bounds.height, Allocator.Temp, NativeArrayOptions.UninitializedMemory);
         for( int i = 0; i < colors.Length; ++i )
         {
-            var cell = m_world.GetCellData(i);
+            var cell = m_chunk.GetCellData(i);
             colors[i] = cell.IsMud ? (byte)255 : (byte)0;
         }
         m_texture.SetPixelData(colors, 0);

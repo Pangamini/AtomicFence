@@ -41,8 +41,8 @@ public class Controller : MonoBehaviour
         m_world.DatabaseUpdateTime.Changed += OnDatabaseUpdateChanged;
         m_world.FenceLength.Changed += OnFenceLengthChanged;
         m_world.FenceCount.Changed += OnFenceCountChanged;
-        m_mudPowerSlider.value = m_mudRenderer.MudPower;
-        m_mudPowerSlider.onValueChanged.AddListener(OnMudPowerChanged);
+        // m_mudPowerSlider.value = m_mudRenderer.MudPower;
+        // m_mudPowerSlider.onValueChanged.AddListener(OnMudPowerChanged);
     }
 
     protected void OnDestroy()
@@ -51,7 +51,7 @@ public class Controller : MonoBehaviour
         m_world.DatabaseUpdateTime.Changed -= OnDatabaseUpdateChanged;
         m_world.FenceLength.Changed -= OnFenceLengthChanged;
         m_world.FenceCount.Changed -= OnFenceCountChanged;
-        m_mudPowerSlider.onValueChanged.RemoveListener(OnMudPowerChanged);
+        // m_mudPowerSlider.onValueChanged.RemoveListener(OnMudPowerChanged);
     }
 
     private void OnMudPowerChanged(float sliderValue) => m_mudRenderer.MudPower = sliderValue;
@@ -101,9 +101,10 @@ public class Controller : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.F8))
                 m_world.LoadFromDatabase();
 
-            Color cursorColor = m_world.TryGetCellIndex(gridCellPos, out int cellIndex) 
-                ? (m_world.GetCellData(cellIndex).IsMud ? m_colorMud : m_colorNoMud)
-                : m_colorOutside;
+            Color cursorColor = Color.magenta;
+            // Color cursorColor = m_world.TryGetCellIndex(gridCellPos, out int cellIndex) 
+            //     ? (m_world.GetCellData(cellIndex).IsMud ? m_colorMud : m_colorNoMud)
+            //     : m_colorOutside;
             
             m_gridCursor.GetPropertyBlock(m_propertyBlock);
             m_propertyBlock.SetColor(s_colorId, cursorColor);

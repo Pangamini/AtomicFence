@@ -27,7 +27,7 @@ public class FencePole : GridObject
     }
     
 
-    public override void OnNeighborsChanged(World world, int dirtyIndex)
+    public override void OnNeighborsChanged(Chunk chunk, int dirtyIndex)
     {
         // update connections
         FenceLength = 0;
@@ -38,20 +38,21 @@ public class FencePole : GridObject
         }
         m_connectors.Clear();
 
-        Vector2Int myPos = world.GetGridPos(dirtyIndex);
+        Vector2Int myPos = chunk.GetGridPos(dirtyIndex);
 
         bool anyStraight = false;
-        anyStraight |= TryMakeConnector(world, m_connectorPrefab, new Vector2Int(myPos.x + 1,myPos.y), 0f, LengthStraight);
-        anyStraight |= TryMakeConnector(world, m_connectorPrefab, new Vector2Int(myPos.x,myPos.y + 1), -90f, LengthStraight);
+        anyStraight |= TryMakeConnector(chunk, m_connectorPrefab, new Vector2Int(myPos.x + 1,myPos.y), 0f, LengthStraight);
+        anyStraight |= TryMakeConnector(chunk, m_connectorPrefab, new Vector2Int(myPos.x,myPos.y + 1), -90f, LengthStraight);
         
-        if(!world.ReduceFenceConnections.Value || !anyStraight)
-            TryMakeConnector(world, m_diagonalConnectorPrefab, new Vector2Int(myPos.x + 1,myPos.y+1), -45f, LengthDiagonal);
+        if(!chunk.World.ReduceFenceConnections.Value || !anyStraight)
+            TryMakeConnector(chunk, m_diagonalConnectorPrefab, new Vector2Int(myPos.x + 1,myPos.y+1), -45f, LengthDiagonal);
 
         bool anyOtherStraight = false;
-        anyOtherStraight |= CheckIsPole(world, new Vector2Int(myPos.x - 1, myPos.y));
-        anyOtherStraight |= CheckIsPole(world, new Vector2Int(myPos.x, myPos.y + 1));
-        if(!world.ReduceFenceConnections.Value || !anyOtherStraight)
-            TryMakeConnector(world, m_diagonalConnectorPrefab, new Vector2Int(myPos.x-1,myPos.y + 1), -135f, LengthDiagonal);
+        anyOtherStraight |= CheckIsPole(chunk, new Vector2Int(myPos.x - 1, myPos.y));
+        anyOtherStraight |= CheckIsPole(chunk, new Vector2Int(myPos.x, myPos.y + 1));
+        
+        if(!chunk.World.ReduceFenceConnections.Value || !anyOtherStraight)
+            TryMakeConnector(chunk, m_diagonalConnectorPrefab, new Vector2Int(myPos.x-1,myPos.y + 1), -135f, LengthDiagonal);
 
         Repaint();
     }
@@ -70,21 +71,19 @@ public class FencePole : GridObject
         ListPool<Renderer>.Release(renderers);
     }
 
-    private bool CheckIsPole(World world, Vector2Int position)
+    private bool CheckIsPole(Chunk chunk, Vector2Int position)
     {
-        if(!world.TryGetCellIndex(position, out int rightIndex))
-            return false;
-        
-        var cell = world.GetCellData(rightIndex);
-        return cell.GridObject is FencePole;
+        if (chunk.GetCellDataInNeighborChunks(position, out var cell))
+        {
+            return cell.GridObject is FencePole;
+        }
+        return false;
     }
     
-    private bool TryMakeConnector(World world, GameObject connectorPrefab, Vector2Int neighborPos, float azimuth, float length)
+    private bool TryMakeConnector(Chunk chunk, GameObject connectorPrefab, Vector2Int neighborPos, float azimuth, float length)
     {
-        if(world.TryGetCellIndex(neighborPos, out int rightIndex))
+        if(chunk.GetCellDataInNeighborChunks(neighborPos, out CellData cell))
         {
-            var cell = world.GetCellData(rightIndex);
-
             if(cell.GridObject is not FencePole)
                 return false;
             
