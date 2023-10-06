@@ -27,6 +27,7 @@ public class Controller : MonoBehaviour
     
     private MaterialPropertyBlock m_propertyBlock;
     private static readonly int s_colorId =Shader.PropertyToID("_Color");
+    private Vector2Int? m_gridCursorPosition;
 
     protected void Awake()
     {
@@ -67,6 +68,40 @@ public class Controller : MonoBehaviour
 
     private void OnReduceFenceConnectionsOnChanged(bool val) => m_reduceFences.isOn = val;
 
+    private Vector2Int? GridCursorPosition
+    {
+        get => m_gridCursorPosition;
+        set
+        {
+            if(m_gridCursorPosition == value)
+                return;
+            
+            m_gridCursorPosition = value;
+            m_gridCursor.gameObject.SetActive(m_gridCursorPosition.HasValue);
+            
+            if(m_gridCursorPosition.HasValue)
+                m_gridCursor.transform.position = m_world.GridToWorld(m_gridCursorPosition.Value);
+
+            UpdateCursorColor();
+        }
+    }
+    
+    private void UpdateCursorColor()
+    {
+        if(!GridCursorPosition.HasValue)
+            return;
+
+        Color cursorColor = m_world.GetIsInFence(GridCursorPosition.Value) ? m_colorMud : m_colorOutside;
+        
+        // Color cursorColor = m_world.GetCellData(GridCursorPosition.Value, out var cellData) 
+        //     ? cellData.IsMud ? m_colorMud : m_colorNoMud
+        //     : m_colorOutside;
+            
+        m_gridCursor.GetPropertyBlock(m_propertyBlock);
+        m_propertyBlock.SetColor(s_colorId, cursorColor);
+        m_gridCursor.SetPropertyBlock(m_propertyBlock);
+    }
+
     protected void Update()
     {
         var ray = m_camera.ScreenPointToRay(Input.mousePosition);
@@ -75,23 +110,24 @@ public class Controller : MonoBehaviour
         {
             Vector3 worldPoint = ray.GetPoint(distance);
             Vector2 gridPoint = m_world.WorldToGrid(worldPoint);
-            Vector2Int gridCellPos = Vector2Int.RoundToInt(gridPoint);
 
             if(!EventSystem.current.IsPointerOverGameObject(-1))
             {
-                m_gridCursor.gameObject.SetActive(true);
-                m_gridCursor.transform.position = m_world.GridToWorld(gridCellPos);
+                var cursorPos = Vector2Int.RoundToInt(gridPoint);
+                GridCursorPosition = cursorPos;
+                
                 if(Input.GetMouseButton(0))
                 {
-                    m_world.SetGridObject(gridCellPos, m_world.FencePrefab);
+                    m_world.SetGridObject(cursorPos, m_world.FencePrefab);
                 }
                 else if(Input.GetMouseButton(1))
                 {
-                    m_world.SetGridObject(gridCellPos, null);
+                    m_world.SetGridObject(cursorPos, null);
                 }
             }
             else
             {
+                GridCursorPosition = null;
                 m_gridCursor.gameObject.SetActive(false);
             }
 
@@ -100,15 +136,11 @@ public class Controller : MonoBehaviour
 
             if(Input.GetKeyDown(KeyCode.F8))
                 m_world.LoadFromDatabase();
-
-            Color cursorColor = Color.magenta;
-            // Color cursorColor = m_world.TryGetCellIndex(gridCellPos, out int cellIndex) 
-            //     ? (m_world.GetCellData(cellIndex).IsMud ? m_colorMud : m_colorNoMud)
-            //     : m_colorOutside;
-            
-            m_gridCursor.GetPropertyBlock(m_propertyBlock);
-            m_propertyBlock.SetColor(s_colorId, cursorColor);
-            m_gridCursor.SetPropertyBlock(m_propertyBlock);
         }
+
+        
+        // just for debug draw
+        if(GridCursorPosition.HasValue)
+            m_world.GetIsInFence(GridCursorPosition.Value);
     }
 }

@@ -1,32 +1,75 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using Firebase.Firestore;
 using UnityEngine;
-using UnityEngine.Profiling;
 
 public class Chunk : MonoBehaviour
 {
+    private Vector2Int m_chunkId;
     private RectInt m_bounds;
     private CellData[] m_cells;
     
     public CellData GetCellData(int index) => m_cells[index];
     public RectInt Bounds => m_bounds;
     public World World => m_world;
-
-    private bool m_mudDirty;
+    public Vector2Int ChunkId => m_chunkId;
     private readonly HashSet<int> m_dirtyCellObjects = new();
+
+    private int? m_chunkFenceCount;
+    private float? m_chunkFenceLength;
+    
+    public int ChunkFenceCount
+    {
+        get
+        {
+            if(m_chunkFenceCount.HasValue)
+                return m_chunkFenceCount.Value;
+            
+            int count = 0;
+            foreach (var cell in m_cells)
+            {
+                if(cell.GridObject is FencePole)
+                    count++;
+            }
+            m_chunkFenceCount = count;
+            return count;
+        }
+        
+        private set => m_chunkFenceCount = value;
+
+    }
+
+    public float ChunkFenceLength
+    {
+        get
+        {
+            if(m_chunkFenceLength.HasValue)
+                return m_chunkFenceLength.Value;
+
+            float length = 0;
+            foreach (var cell in m_cells)
+            {
+                if(cell.GridObject is FencePole fencePole)
+                    length += fencePole.FenceLength;
+            }
+            m_chunkFenceLength = length;
+            return length;
+        }
+        
+        private set => m_chunkFenceLength = value;
+    }
 
     public event Action MudUpdated;
 
-    public void SetAllCellsDirty()
+    public void SetAllCellObjectsDirty()
     {
         for( int i = 0; i < m_cells.Length; ++i )
             m_dirtyCellObjects.Add(i);
     }
     
-    public void Initialize(RectInt bounds, World world)
+    public void Initialize(RectInt bounds, Vector2Int chunkId, World world)
     {
+        m_chunkId = chunkId;
         m_world = world;
         m_bounds = bounds;
         m_cells = new CellData[m_bounds.width * m_bounds.height];
@@ -98,10 +141,10 @@ public class Chunk : MonoBehaviour
         {
             cell.GridObject = null;
         }
-        
-        m_mudDirty = true;
-        
+
         SetNeighborhoodDirty(gridPos);
+
+        m_chunkFenceCount = null;
     }
 
     /// <summary>
@@ -114,29 +157,24 @@ public class Chunk : MonoBehaviour
         {
             for( int x = gridPos.x - 1; x <= gridPos.x + 1; ++x )
             {
-                SetCellDirty(new Vector2Int(x, y));
+                SetCellObjectDirty(new Vector2Int(x, y));
             }
         }
     }
     
-    public void SetCellDirty(Vector2Int vector2Int)
+    public void SetCellObjectDirty(Vector2Int vector2Int)
     {
         if(TryGetCellIndex(vector2Int, out int index))
             m_dirtyCellObjects.Add(index);
         else
-            World.SetCellDirty(vector2Int);
+            World.SetCellObjectDirty(vector2Int);
     }
 
     protected void Update()
     {
-        if(m_mudDirty)
-        {
-            UpdateMud();
-            m_mudDirty = false;
-        }
-
         if(m_dirtyCellObjects.Count > 0)
         {
+            m_chunkFenceLength = null;
             // Dirty cells get OnNeighborsChanged call
             foreach (int dirtyIndex in m_dirtyCellObjects)
             {
@@ -164,76 +202,8 @@ public class Chunk : MonoBehaviour
         }
     }
     
-    private static readonly CustomSampler s_updateMudSampler = CustomSampler.Create(nameof(UpdateMud));
     private World m_world;
-
-    /// <summary>
-    /// FloodFills the world from the edges, in order to find cells that are fully enclosed by fences.
-    /// </summary>
-    private void UpdateMud()
-    {
-        s_updateMudSampler.Begin();
-        // Set all mud flags.
-        // We will floodFill from outside.
-        for(int i = 0; i< m_cells.Length; ++i)
-        {
-            m_cells[i].IsMud = true;
-        }
-        
-        var queue = new Queue<Vector2Int>();
-        var alreadyEnqueued = new bool[m_cells.Length];
-
-        void TryEnqueue(Vector2Int cellPos)
-        {
-            if(!TryGetCellIndex(cellPos, out int index))
-                return;
-            
-            CellData cell = m_cells[index];
-            if(alreadyEnqueued[index] || !cell.IsMud || cell.BlocksMud)
-                return;
-            
-            alreadyEnqueued[index] = true;
-            queue.Enqueue(cellPos);
-        }
-
-        // enqueue all edge cells
-        foreach(var edgeCell in EnumerateWorldEdgeCells())
-        {
-            TryEnqueue(edgeCell);
-        }
-
-        while(queue.TryDequeue(out Vector2Int cellIndex))
-        {
-            m_cells[GetCellIndexNoCheck(cellIndex)].IsMud = false;
-
-            TryEnqueue(new Vector2Int(cellIndex.x+1, cellIndex.y));
-            TryEnqueue(new Vector2Int(cellIndex.x-1, cellIndex.y));
-            TryEnqueue(new Vector2Int(cellIndex.x, cellIndex.y+1));
-            TryEnqueue(new Vector2Int(cellIndex.x, cellIndex.y-1));
-        }
-        s_updateMudSampler.End();
-
-        MudUpdated?.Invoke();
-    }
-
-    /// <summary>
-    /// Yields all cell positions that are on the edge of the world.
-    /// </summary>
-    IEnumerable<Vector2Int> EnumerateWorldEdgeCells()
-    {
-        for( int x = m_bounds.xMin; x < m_bounds.xMax; ++x )
-        {
-            yield return new Vector2Int(x, m_bounds.yMin);
-            yield return new Vector2Int(x, m_bounds.yMax - 1);
-        }
-        
-        for( int y = m_bounds.yMin+1; y < m_bounds.yMax-1; ++y )
-        {
-            yield return new Vector2Int(m_bounds.xMin, y);
-            yield return new Vector2Int(m_bounds.xMax-1, y);
-        }
-    }
-
+    
     private void OnDrawGizmosSelected()
     {
         if(m_world == null)
