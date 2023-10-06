@@ -1027,7 +1027,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_world: {fileID: 552954034}
   m_shaderTextureField: _MudMap
-  m_mudPowerId: 691
 --- !u!1 &695206020
 GameObject:
   m_ObjectHideFlags: 0

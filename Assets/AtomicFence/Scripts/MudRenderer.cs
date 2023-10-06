@@ -11,7 +11,7 @@ public class MudRenderer : MonoBehaviour
 {
     [SerializeField] private World m_world;
     [SerializeField] private string m_shaderTextureField = "_MainTex";
-    [SerializeField] private int m_mudPowerId = Shader.PropertyToID("_MudPower");
+    private readonly int m_mudPowerId = Shader.PropertyToID("_MudPower");
     private Texture2D m_texture;
     private MaterialPropertyBlock m_block;
     private Renderer m_renderer;
